@@ -1,4 +1,4 @@
--- Find the 5 students with the highest average grade from all subjects.
+-- Find the 5 students with the highest average grade in all disciplines.
 SELECT  s.first_name || ' ' || s.last_name as student_name,
         ROUND(AVG(g.grade), 2) AS avg_grade
 FROM    students s
