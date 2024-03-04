@@ -85,10 +85,10 @@ def generate_data():
         start_date = datetime(today.year - 1, 9, 1)
 
     # The end date is June 30th of the year following the start date
-    end_date = datetime(start_date.year + 1, 6, 30)
+    # end_date = datetime(start_date.year + 1, 6, 30)
 
     fake_dates = [
-        fake.date_between(start_date, end_date)
+        fake.date_between(start_date, today)
         for _ in range(int(NUMBER_STUDENTS * NUMBER_GRADES))
     ]
 
@@ -117,12 +117,16 @@ def prepare_data(
     """
 
     pre_groups = [(group,) for group in _groups]
+
     pre_students = [(first, last, randint(1, len(_groups))) for first, last
                     in zip(_student_first_names, _student_last_names)]
+
     pre_teachers = [(first, last) for first, last
                     in zip(_teacher_first_names, _teacher_last_names)]
+
     pre_disciplines = [(discipline, randint(1, len(pre_teachers)))
                        for discipline in _disciplines]
+
     pre_grades = [(randint(1, len(pre_students)),
                    randint(1, len(pre_disciplines)),
                    randint(1, 5), date) for date in _grades_dates]
