@@ -1,8 +1,8 @@
 -- Find the 5 students with the highest average grade from all subjects.
-SELECT  s.first_name || ' ' || s.last_name AS "Student",
-        ROUND(AVG(g.grade), 2) AS "Average grade"
+SELECT  s.first_name || ' ' || s.last_name as student_name,
+        ROUND(AVG(g.grade), 2) AS avg_grade
 FROM    students s
 JOIN    grades g ON s.id = g.student_id
-GROUP BY "Student"
-ORDER BY "Average grade" DESC
+GROUP BY student_name
+ORDER BY avg_grade DESC
 LIMIT 5;
