@@ -6,13 +6,13 @@ DROP TABLE IF EXISTS groups;
 
 -- Creating groups table
 CREATE TABLE groups (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     group_name VARCHAR(10) NOT NULL
 );
 
 -- Creating students table with a foreign key referencing groups
 CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     group_id INT,
@@ -23,14 +23,14 @@ CREATE TABLE students (
 
 -- Creating teachers table
 CREATE TABLE teachers (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL
 );
 
 -- Creating disciplines table with a foreign key referencing teachers
 CREATE TABLE disciplines (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     discipline_name VARCHAR(50) NOT NULL,
     teacher_id INT,
     FOREIGN KEY (teacher_id) REFERENCES teachers(id)
@@ -40,7 +40,7 @@ CREATE TABLE disciplines (
 
 -- Creating grades table with foreign keys referencing students and disciplines
 CREATE TABLE grades (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     student_id INT NOT NULL,
     discipline_id INT NOT NULL,
     grade INT CHECK (grade BETWEEN 1 AND 5),
