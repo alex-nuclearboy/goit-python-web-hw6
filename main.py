@@ -1,5 +1,5 @@
 import sqlite3
-from random import randint
+from random import randint, sample
 from faker import Faker
 from datetime import datetime
 
@@ -124,8 +124,12 @@ def prepare_data(
     pre_teachers = [(first, last) for first, last
                     in zip(_teacher_first_names, _teacher_last_names)]
 
-    pre_disciplines = [(discipline, randint(1, len(pre_teachers)))
-                       for discipline in _disciplines]
+    # Distribution of disciplines between teachers
+    shuffled_disciplines = sample(_disciplines, len(_disciplines))
+    pre_disciplines = []
+    for i, discipline in enumerate(shuffled_disciplines):
+        teacher_index = i % len(pre_teachers)
+        pre_disciplines.append((discipline, teacher_index + 1))
 
     pre_grades = [(randint(1, len(pre_students)),
                    randint(1, len(pre_disciplines)),
