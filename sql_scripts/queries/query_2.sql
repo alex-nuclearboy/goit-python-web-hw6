@@ -5,7 +5,7 @@ SELECT  d.discipline_name as "Discipline",
 FROM    grades g
 JOIN    students s ON g.student_id = s.id
 JOIN    disciplines d ON g.discipline_id = d.id
-WHERE   d.id = 1  -- 'Python Core'
+WHERE   d.id = 1
 GROUP BY "Student"
 ORDER BY "Average grade" DESC
 LIMIT 1;

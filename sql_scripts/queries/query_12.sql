@@ -9,8 +9,8 @@ JOIN    disciplines d ON gr.discipline_id = d.id
 JOIN    students s ON gr.student_id = s.id
 JOIN    groups gp ON s.group_id = gp.id
 WHERE   (
-        gp.id = 3    -- 'PyWeb20-3'
-        AND d.id = 1 -- 'Python Core'
+        gp.id = 3
+        AND d.id = 1
         )
 GROUP BY "Student"
 ORDER BY "Student";

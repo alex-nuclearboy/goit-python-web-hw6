@@ -9,7 +9,7 @@ JOIN    grades gr ON gr.student_id = s.id
 JOIN    disciplines d ON gr.discipline_id = d.id
 JOIN    groups gp ON s.group_id = gp.id
 WHERE   (
-        d.id = 5  -- 'Databases and SQL'
-        AND gp.id = 1  -- 'PyWeb20-1'
+        d.id = 5
+        AND gp.id = 1
         )
 ORDER BY "Student";

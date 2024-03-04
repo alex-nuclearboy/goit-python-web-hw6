@@ -6,6 +6,6 @@ FROM    grades gr
 JOIN    students s ON gr.student_id = s.id
 JOIN    disciplines d ON gr.discipline_id = d.id
 JOIN    groups gp ON s.group_id = gp.id
-WHERE   d.id = 5  -- 'Databases and SQL'
+WHERE   d.id = 5
 GROUP BY "Group"
 ORDER BY "Average grade" DESC;
