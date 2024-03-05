@@ -12,9 +12,9 @@ The schema is structured into the following tables to accurately represent the e
 - **Disciplines Table:** Lists disciplines along with the respective teacher for each discipline.
 - **Grades Table:** Records the grades students receive in various disciplines, noting the award date.
 
-## Data Generation
+## Data Generation Requirement
 
-The database is populated with random data generated using the `Faker` library, simulating a scenario with 50 students across 3 groups, 5 teachers, and up to 20 grades per student for all disciplines. There are also 8 disciplines.
+This project uses the `Faker` library to fill the database with fictitious but realistic-looking data. While the names and last names of students and teachers are randomly generated to add variety, the names of the groups and the disciplines are already set within the program and don't change. The setup includes 50 students spread out over 3 fixed groups, with 5 teachers, 8 predefined disciplines, and each student getting up to 20 grades across all these disciplines.
 
 ## Queries
 
@@ -32,10 +32,6 @@ Scripts are provided for executing various queries to retrieve information, such
 - Identifying disciplines taught to a specific student by a specific teacher.
 - Calculating the average grade a teacher awards to a specific student.
 - Finding grades awarded in the last class for a discipline within a specific group.
-
-## Data Generation Requirement
-
-This project uses the `Faker` library to fill the database with fictitious but realistic-looking data. While the names and last names of students and teachers are randomly generated to add variety, the names of the groups and the disciplines are already set within the program and don't change. The setup includes 50 students spread out over 3 fixed groups, with 5 teachers, 8 predefined disciplines, and each student getting up to 20 grades across all these disciplines.
 
 ## Installation
 
